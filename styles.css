@@ -45,6 +45,11 @@ img {
   margin: auto
 }
 
+.container {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
 .section {
   padding: 104px 0
 }
@@ -736,6 +741,21 @@ img {
   margin: 0;
   color: var(--muted);
   max-width: 720px
+}
+
+.section-support {
+  padding: 96px 0;
+}
+
+.section-support .section-heading {
+  max-width: 760px;
+}
+
+.section-support .cta-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .final-cta {
