@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lucascosta19.github.io/maui-offline-first-starter-kit/sitemap.xml

@@ -1,32 +1,31 @@
 # Maui Offline-First Starter Kit — Landing Page
 
-Static landing page prepared for the initial commercial launch / Lemon Squeezy onboarding.
+Production-ready static landing page for:
 
-## Publish with GitHub Pages
+https://lucascosta19.github.io/maui-offline-first-starter-kit/
 
-1. Create a **new public repository** dedicated only to this landing page (do **not** use the private/source-code product repository).
-2. Upload the contents of this folder to the repository root.
-3. In GitHub: **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Select branch `main` and folder `/ (root)`, then **Save**.
-6. Wait for deployment. GitHub will show the public URL, usually:
-   `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`
-7. Use that public URL in the Lemon Squeezy website field.
+## What changed in this version
 
-## Before live sales
+- Uses the five final 4:3 commercial product images.
+- Adds a clearer release-confidence section (375 tests, three final suite passes, clean package validation).
+- Expands the commercial-license summary.
+- Keeps Developer ($79) and Team — 5 Seats ($199) launch pricing.
+- Keeps checkout buttons disabled as “Sales opening soon” until the merchant account is activated.
+- Adds canonical / Open Graph / Twitter metadata for the public GitHub Pages URL.
+- Keeps the site dependency-free: static HTML + CSS only.
 
-- Replace “Sales opening soon” buttons with the final Lemon Squeezy checkout URLs after store activation.
-- If analytics, forms, tracking, or a new contact channel is added, update `privacy.html`.
-- Review refund wording against the merchant-of-record flow used for live sales.
-- Keep the product source ZIP out of this public repository.
+## Publish on GitHub Pages
 
-## Included pages
+Replace the public repository contents with the files in this folder, commit, and push to `main`.
 
-- `index.html` — product landing page
-- `privacy.html` — lightweight privacy notice
-- `terms.html` — website/purchase terms summary
-- `refund.html` — refund notice
-- `styles.css` — self-contained responsive styling
-- `assets/` — product screenshots only
+GitHub Pages should remain configured as:
 
-© 2026 Lucas Soares Costa.
+- Source: Deploy from a branch
+- Branch: main
+- Folder: / (root)
+
+## When live checkout is available
+
+Replace each `Sales opening soon` span in `index.html` with an `<a>` button pointing to the appropriate live Lemon Squeezy checkout URL.
+
+Do not use Test Mode checkout URLs on the public website.
