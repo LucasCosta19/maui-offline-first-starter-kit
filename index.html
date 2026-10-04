@@ -9,6 +9,7 @@
     content="Production-oriented offline-first infrastructure for .NET MAUI and ASP.NET Core: SQLite, durable outbox, push/pull sync, conflict handling, authentication, diagnostics, and 375 automated tests.">
   <meta name="theme-color" content="#0b0914">
   <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://lucascosta19.github.io/maui-offline-first-starter-kit/">
   <meta property="og:title" content="Maui Offline-First Starter Kit">
   <meta property="og:description"
@@ -31,9 +32,10 @@
     <div class="shell nav-wrap">
       <a class="brand" href="#top" aria-label="Maui Offline-First Starter Kit home">
         <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span>Maui Offline-First</span>
+        <span class="brand-name">Maui Offline-First</span>
       </a>
       <nav aria-label="Primary navigation">
+        <a href="#demo">Demo</a>
         <a href="#features">Features</a>
         <a href="#architecture">Architecture</a>
         <a href="#gallery">Gallery</a>
@@ -41,7 +43,18 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button small" href="#pricing">Launch pricing</a>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <div class="mobile-nav-panel">
+          <a href="#demo">Demo</a>
+          <a href="#features">Features</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#license">License</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </details>
+      <a class="button small header-cta" href="#pricing">Pricing</a>
     </div>
   </header>
 
@@ -55,12 +68,12 @@
             <span class="status-badge soft">One-time purchase</span>
           </div>
           <div class="eyebrow">.NET 10 · .NET MAUI · ASP.NET Core · SQLite</div>
-          <h1>Build apps that keep working <span>offline.</span></h1>
-          <p class="lead">A production-oriented starter kit for .NET MAUI apps that need reliable local-first CRUD and
-            safe synchronization — without rebuilding the sync infrastructure from scratch.</p>
+          <h1>Ship offline-first .NET MAUI apps <span>without rebuilding sync.</span></h1>
+          <p class="lead">Full source code for local-first CRUD, a durable outbox, safe push/pull synchronization,
+            conflict handling, authentication, diagnostics, and tests.</p>
           <div class="hero-actions">
-            <a class="button" href="#pricing">See launch pricing</a>
-            <a class="button ghost" href="#architecture">Explore architecture</a>
+            <a class="button" href="#demo">See the offline-to-sync flow</a>
+            <a class="button ghost" href="#pricing">Compare licenses</a>
           </div>
           <div class="proof-row" aria-label="Release highlights">
             <div><strong>375</strong><span>automated tests</span></div>
@@ -80,6 +93,31 @@
       <div class="shell strip-grid">
         <span>Local-first CRUD</span><span>Durable Outbox</span><span>Push / Pull</span><span>Conflict
           Resolution</span><span>JWT + Refresh Tokens</span><span>Diagnostics</span>
+      </div>
+    </section>
+
+    <section id="demo" class="section demo-section">
+      <div class="shell">
+        <div class="section-heading centered">
+          <div class="eyebrow">Product flow</div>
+          <h2>See the complete offline-to-sync lifecycle.</h2>
+          <p>Create and change records without a connection, inspect the durable local queue, reconnect, synchronize,
+            and verify the result in sync history.</p>
+        </div>
+        <div class="demo-card">
+          <div class="demo-preview">
+            <img src="assets/media-sync.webp" width="1600" height="1200"
+              alt="Synchronization hub showing the observable sync lifecycle">
+            <div class="demo-preview-label"><span aria-hidden="true">●</span> Offline-to-sync flow</div>
+          </div>
+          <ol class="demo-steps" aria-label="Offline-to-sync lifecycle">
+            <li><strong>01</strong><span>Offline CRUD</span></li>
+            <li><strong>02</strong><span>Local queue</span></li>
+            <li><strong>03</strong><span>Reconnect</span></li>
+            <li><strong>04</strong><span>Synchronize</span></li>
+            <li><strong>05</strong><span>Verify history</span></li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -225,46 +263,21 @@
       </div>
     </section>
 
-    <section class="section confidence-section">
+    <section class="section confidence-section section-muted">
       <div class="shell">
         <div class="section-heading centered">
           <div class="eyebrow">Release confidence</div>
-          <h2>Validated as a source-code product, not just a demo.</h2>
-          <p>Version 1.0.0 went through repeatable release hardening before packaging.</p>
+          <h2>Proof without inflated claims.</h2>
+          <p>Version 1.0.0 was hardened as a source-code product and is explicit about its validated platform scope.</p>
         </div>
         <div class="confidence-grid">
+          <article><strong>v1.0.0</strong><span>production-oriented release</span></article>
           <article><strong>375 / 375</strong><span>automated tests passing</span></article>
-          <article><strong>3 consecutive</strong><span>final full-suite passes</span></article>
-          <article><strong>0 warnings</strong><span>final solution + platform builds</span></article>
-          <article><strong>Clean package</strong><span>re-extracted, rebuilt, and retested</span></article>
+          <article><strong>Windows</strong><span>functionally validated</span></article>
+          <article><strong>Android</strong><span>functionally validated</span></article>
         </div>
-      </div>
-    </section>
-
-    <section class="section platform-section section-muted">
-      <div class="shell">
-        <div class="section-heading">
-          <div class="eyebrow">Platform scope</div>
-          <h2>Clear about what was actually validated.</h2>
-        </div>
-        <div class="platform-grid">
-          <div class="platform-card good"><span>Functionally validated</span>
-            <h3>Windows</h3>
-            <p>CRUD, navigation, sync, diagnostics, persistence, Light/Dark, and release behavior validated.</p>
-          </div>
-          <div class="platform-card good"><span>Functionally validated</span>
-            <h3>Android</h3>
-            <p>CRUD, offline/reconnect, sync, diagnostics, persistence, navigation, and Light/Dark validated.</p>
-          </div>
-          <div class="platform-card"><span>Source target</span>
-            <h3>iOS</h3>
-            <p>Compile-checked in v1; not functionally certified.</p>
-          </div>
-          <div class="platform-card"><span>Source target</span>
-            <h3>Mac Catalyst</h3>
-            <p>Compile-checked in v1; not functionally certified.</p>
-          </div>
-        </div>
+        <p class="platform-note">iOS and Mac Catalyst are source targets and were compile-checked in v1.0.0; they are
+          not functionally certified.</p>
       </div>
     </section>
 
@@ -294,13 +307,14 @@
       <div class="shell">
         <div class="section-heading centered">
           <div class="eyebrow">Launch pricing</div>
-          <h2>One-time purchase. No runtime royalties.</h2>
+          <h2>Choose the license that matches your team.</h2>
+          <p class="pricing-lead">One-time purchase. Full source code. No runtime royalties.</p>
           <p>Checkout will open as soon as merchant activation is complete.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card featured">
             <div class="price-label">Developer License</div>
-            <div class="price"><span>$</span>79</div>
+            <div class="price"><span>US$</span>79</div>
             <p>For one authorized developer.</p>
             <ul>
               <li>Unlimited personal projects</li>
@@ -309,11 +323,11 @@
               <li>Full source modification</li>
               <li>No revenue share or per-app fee</li>
             </ul>
-            <span class="button disabled" aria-disabled="true">Sales opening soon</span>
+            <div class="availability-note" role="status">Developer checkout opening after merchant activation</div>
           </article>
           <article class="price-card">
             <div class="price-label">Team License · 5 seats</div>
-            <div class="price"><span>$</span>199</div>
+            <div class="price"><span>US$</span>199</div>
             <p>For teams that need shared source access.</p>
             <ul>
               <li>Up to 5 authorized developers</li>
@@ -322,12 +336,12 @@
               <li>Client delivery under license terms</li>
               <li>No runtime royalties</li>
             </ul>
-            <span class="button ghost disabled" aria-disabled="true">Sales opening soon</span>
+            <div class="availability-note" role="status">Team checkout opening after merchant activation</div>
           </article>
         </div>
-        <p class="license-note">The full commercial license is included with the product. The purchased version is
-          licensed perpetually, subject to the license terms. Technical validity/support period: 12 months from
-          purchase.</p>
+        <p class="license-note">The purchased version is licensed perpetually, subject to the included license terms.
+          Review the <a href="terms.html">license terms</a>, <a href="support.html">support scope</a>, and <a
+            href="refund.html">refund policy</a> before purchase.</p>
       </div>
     </section>
 
@@ -380,34 +394,30 @@
       </div>
     </section>
 
+    <section class="section section-support">
+      <div class="shell support-grid">
+        <div class="section-heading">
+          <span class="eyebrow">Support</span>
+          <h2>Self-service first. Structured help when you need it.</h2>
+          <p>Start with the included documentation and troubleshooting guide. If an issue remains, the support page
+            shows exactly what diagnostic information to provide so problems can be reproduced faster.</p>
+        </div>
+        <div class="cta-row">
+          <a class="button ghost" href="faq.html">Read FAQ</a>
+          <a class="button ghost" href="support.html">Support center</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section final-cta">
       <div class="shell cta-card">
         <div>
           <div class="eyebrow">Maui Offline-First Starter Kit 1.0.0</div>
-          <h2>Start from the sync foundation, not from zero.</h2>
-          <p>Production-oriented architecture for developers building serious .NET MAUI apps that cannot depend on a
-            permanent connection.</p>
+          <h2>Start with the sync foundation already built.</h2>
+          <p>Use a production-oriented reference implementation for the infrastructure that usually takes the longest
+            to design, test, and debug.</p>
         </div>
-        <a class="button" href="#pricing">View launch pricing</a>
-      </div>
-    </section>
-
-    <section class="section section-support">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Support</span>
-          <h2>Self-service first. Structured help when you need it.</h2>
-          <p>
-            Start with the included documentation and troubleshooting guide.
-            If an issue remains, the support page shows exactly what diagnostic
-            information to provide so problems can be reproduced faster.
-          </p>
-        </div>
-
-        <div class="cta-row">
-          <a class="button button-secondary" href="faq.html">Read FAQ</a>
-          <a class="button button-secondary" href="support.html">Support center</a>
-        </div>
+        <a class="button" href="#demo">See offline-to-sync flow</a>
       </div>
     </section>
 
@@ -427,6 +437,11 @@
       <div class="copyright">© 2026 Lucas Soares Costa. All rights reserved.</div>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.mobile-nav a').forEach((link) => {
+      link.addEventListener('click', () => link.closest('details').removeAttribute('open'));
+    });
+  </script>
 </body>
 
 </html>
