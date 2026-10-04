@@ -815,6 +815,44 @@ img {
   font-weight: 750
 }
 
+
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(85, 220, 154, .3);
+  border-radius: 999px;
+  background: rgba(85, 220, 154, .1);
+  color: #91efbd;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(85, 220, 154, .12)
+}
+
+.purchase-button {
+  width: 100%;
+  margin-top: 6px
+}
+
+.checkout-note {
+  max-width: 830px;
+  margin: 22px auto 0;
+  text-align: center;
+  color: #b8b1c5;
+  font-size: 13px
+}
+
 .license-note {
   max-width: 830px;
   margin: 24px auto 0;

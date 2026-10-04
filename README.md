@@ -1,4 +1,4 @@
-# Maui Offline-First Starter Kit — Landing v4 Commercial
+# Maui Offline-First Starter Kit — Landing v5 Live
 
 Static landing package prepared for:
 
@@ -22,7 +22,8 @@ https://lucascosta19.github.io/maui-offline-first-starter-kit/
 - Prevents header overflow on narrow mobile screens.
 - Unifies mobile gutters between `.shell` and `.container`.
 - Consolidates release confidence and platform validation into one section.
-- Replaces visually clickable but inactive pricing buttons with honest availability notices.
+- Activates the Developer and Team purchase buttons with the verified Gumroad option links.
+- Adds an “Available now” state and secure checkout/delivery note for Gumroad.
 - Places license, support, and refund links beside pricing.
 - Moves Support before the final commercial CTA.
 - Reduces repeated proof and excess vertical spacing.
@@ -62,13 +63,24 @@ assets/maui-offline-first-demo-poster.webp
 
 The video uses controls, `playsinline`, `muted`, and `preload="metadata"`. It does not autoplay, which keeps the page lightweight and avoids unexpected playback.
 
-## When live checkout is available
+## Live checkout
 
-Replace each `.availability-note` in `index.html` with a real `<a class="button">` pointing to the matching live Lemon Squeezy checkout:
+The landing page is now configured for live Gumroad checkout.
+
+### Developer License — US$79
 
 ```text
-Get Developer License — US$79
-Get Team License — US$199
+https://lucassoares34.gumroad.com/l/maui-offline-first-starter-kit?option=l7nQNAxDZfQpfjhwpVNjSw%3D%3D
 ```
 
-Also change the header `Pricing` link and the final CTA if you want them to go directly to checkout. Never publish Test Mode checkout URLs.
+### Team License — 5 Seats — US$199
+
+```text
+https://lucassoares34.gumroad.com/l/maui-offline-first-starter-kit?option=QP60flRto5H9uLiBRCoHxw%3D%3D
+```
+
+Both links were manually verified to preselect the intended Gumroad product version.
+
+The landing page opens Gumroad in a new tab with `noopener noreferrer`.
+
+The product page remains the primary marketing surface; Gumroad handles checkout and digital delivery.
