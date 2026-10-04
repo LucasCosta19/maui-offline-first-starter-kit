@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — Maui Offline-First Starter Kit</title>
+<meta name="description" content="Frequently asked questions about licensing, platforms, offline-first behavior, support and source-code delivery.">
+
+<style>
+  :root{color-scheme:dark;background:#0b1020;color:#eef2ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(circle at top right,#25104a 0,#0b1020 38%,#080b16 100%);color:#eef2ff}
+  a{color:#c4b5fd}
+  .wrap{max-width:980px;margin:0 auto;padding:32px 20px 64px}
+  .top{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:48px}
+  .brand{font-weight:800;text-decoration:none;color:white}
+  .back{text-decoration:none}
+  .hero{padding:32px;border:1px solid #292f47;background:rgba(18,24,44,.82);border-radius:24px;margin-bottom:28px}
+  .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#a78bfa;font-weight:800}
+  h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.02;margin:.45rem 0 1rem}
+  h2{margin-top:0}
+  h3{margin-bottom:.35rem}
+  p,li{line-height:1.65;color:#cbd5e1}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .card{padding:22px;border:1px solid #292f47;background:rgba(13,18,34,.9);border-radius:18px}
+  .full{grid-column:1/-1}
+  .tag{display:inline-block;padding:.35rem .65rem;border-radius:999px;background:#241642;border:1px solid #6d4dc5;color:#ddd6fe;font-size:.85rem;margin:.2rem .25rem .2rem 0}
+  code,pre{font-family:"SFMono-Regular",Consolas,monospace}
+  pre{white-space:pre-wrap;padding:16px;border-radius:14px;background:#070b14;border:1px solid #252b3e;color:#dbeafe;overflow:auto}
+  .notice{padding:16px;border-left:4px solid #8b5cf6;background:#161229;border-radius:10px}
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid #252b3e;color:#94a3b8;font-size:.9rem}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="index.html">Maui Offline-First Starter Kit</a>
+    <a class="back" href="index.html">← Back to product</a>
+  </div>
+
+  <section class="hero">
+    <span class="eyebrow">FAQ</span>
+    <h1>Common questions before and after purchase.</h1>
+    <p>Concise answers about the product, licensing, platforms, source access and support scope.</p>
+  </section>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Is this only a UI template?</h2>
+      <p>No. The core value is the offline-first infrastructure: SQLite persistence, durable Outbox, Push/Pull/Bootstrap synchronization, idempotency, concurrency, conflicts, tombstones, authentication and diagnostics.</p>
+    </article>
+    <article class="card">
+      <h2>Do I receive the source code?</h2>
+      <p>Yes. The product is delivered as source code together with documentation, the reference application, the ASP.NET Core API and the automated test suite.</p>
+    </article>
+    <article class="card">
+      <h2>Can I use it commercially?</h2>
+      <p>Yes. Commercial apps, SaaS products, internal systems and client projects are allowed under the purchased commercial license.</p>
+    </article>
+    <article class="card">
+      <h2>Can I modify the source?</h2>
+      <p>Yes. You may adapt and extend the source for End Products, subject to the included commercial license and redistribution restrictions.</p>
+    </article>
+    <article class="card">
+      <h2>Can I deliver source to a client?</h2>
+      <p>Yes, when it is privately delivered as part of the specific End Product. A client may maintain that product. General reuse of the Starter Kit for unrelated projects requires its own license.</p>
+    </article>
+    <article class="card">
+      <h2>Developer vs Team?</h2>
+      <p><strong>Developer</strong> covers 1 developer with access to the Starter Kit source. <strong>Team</strong> covers up to 5 developers. End users and people without source access do not consume seats.</p>
+    </article>
+    <article class="card">
+      <h2>Which platforms are validated?</h2>
+      <p>Windows and Android are functionally validated in v1.0.0. iOS and Mac Catalyst source targets are maintained and compile-checked, but not functionally certified in this release.</p>
+    </article>
+    <article class="card">
+      <h2>Does it work offline?</h2>
+      <p>Yes. Ordinary business CRUD is persisted locally first. Synchronization is a separate concern that runs when connectivity and the API are available.</p>
+    </article>
+    <article class="card">
+      <h2>Does it handle conflicts and deletes?</h2>
+      <p>Yes. Conflicts are persisted and resolvable, and server tombstones propagate deletes across clients.</p>
+    </article>
+    <article class="card">
+      <h2>Guaranteed background sync?</h2>
+      <p>No. v1 does not promise guaranteed background synchronization on every mobile platform. Foreground orchestration is the validated baseline.</p>
+    </article>
+    <article class="card">
+      <h2>Attachments, media, push or realtime?</h2>
+      <p>Not in v1.0.0. These are intentionally outside the first release scope.</p>
+    </article>
+    <article class="card">
+      <h2>Hosted backend included?</h2>
+      <p>No hosted service is operated for you. The ASP.NET Core API source is included for deployment in your own environment.</p>
+    </article>
+    <article class="card">
+      <h2>How many tests?</h2>
+      <p>v1.0.0 includes <strong>375 automated tests</strong> across Core, Infrastructure and API projects.</p>
+    </article>
+    <article class="card">
+      <h2>What support is included?</h2>
+      <p>The commercial license defines a 12-month Technical Validity Period from the Purchase Date with reasonable technical assistance relating to the documented functioning of the purchased version. Custom development, project implementation, infrastructure administration and SLA support are not included unless separately agreed.</p>
+    </article>
+    <article class="card">
+      <h2>Can I resell the Starter Kit?</h2>
+      <p>No. You may build End Products with it, but you may not redistribute the Starter Kit itself, publish the source publicly, or sell a renamed/substantially equivalent competing starter or template.</p>
+    </article>
+    <article class="card">
+      <h2>Lifetime updates?</h2>
+      <p>No lifetime-update promise is made. The purchased version remains licensed under its terms; access to future versions depends on the offer available at that time.</p>
+    </article>
+  </div>
+
+  <footer>
+    © 2026 Lucas Soares Costa · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a> · <a href="support.html">Support</a>
+  </footer>
+</div>
+</body>
+</html>
