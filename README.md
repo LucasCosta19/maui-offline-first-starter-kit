@@ -38,30 +38,29 @@ Keep GitHub Pages configured as:
 - Branch: `main`
 - Folder: `/ (root)`
 
-## Add the finished 80-second demo
+## Included product demo
 
-The current Product Flow section is a truthful static preview and does not pretend that a video already exists.
+The Product Flow section includes the finished 68-second demo:
 
-After recording the demo:
-
-1. Add `assets/maui-offline-first-demo-80s-1080p.mp4`.
-2. Add `assets/maui-offline-first-demo-poster.webp`.
-3. Replace `.demo-preview` in `index.html` with:
-
-```html
-<video
-  controls
-  muted
-  playsinline
-  preload="metadata"
-  poster="assets/maui-offline-first-demo-poster.webp"
-  aria-label="80-second demonstration of offline CRUD, local queue, reconnection, synchronization, and sync history"
->
-  <source src="assets/maui-offline-first-demo-80s-1080p.mp4" type="video/mp4">
-</video>
+```text
+assets/MauiOfflineFirstKit-1.0.0-demo-web.mp4
 ```
 
-Keep the five-step lifecycle list beside the video.
+Video properties:
+
+- H.264 / MP4
+- 1600 × 900
+- 30 fps
+- no audio track
+- approximately 725 KB
+
+The poster is extracted from the demo opening frame and stored at:
+
+```text
+assets/maui-offline-first-demo-poster.webp
+```
+
+The video uses controls, `playsinline`, `muted`, and `preload="metadata"`. It does not autoplay, which keeps the page lightweight and avoids unexpected playback.
 
 ## When live checkout is available
 

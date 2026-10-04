@@ -372,31 +372,13 @@ img {
   background: #0d0b18
 }
 
-.demo-preview img {
+.demo-preview img,
+.demo-preview video {
+  display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover
-}
-
-.demo-preview-label {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 999px;
-  background: rgba(11, 9, 20, .84);
-  backdrop-filter: blur(12px);
-  font-size: 12px;
-  font-weight: 800
-}
-
-.demo-preview-label span {
-  color: var(--green)
 }
 
 .demo-steps {
@@ -1156,11 +1138,6 @@ footer {
   .demo-card {
     padding: 14px;
     border-radius: 18px
-  }
-
-  .demo-preview-label {
-    left: 10px;
-    bottom: 10px
   }
 
   .section-support .cta-row {

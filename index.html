@@ -18,6 +18,11 @@
   <meta property="og:url" content="https://lucascosta19.github.io/maui-offline-first-starter-kit/">
   <meta property="og:image"
     content="https://lucascosta19.github.io/maui-offline-first-starter-kit/assets/media-dashboard.webp">
+  <meta property="og:video"
+    content="https://lucascosta19.github.io/maui-offline-first-starter-kit/assets/MauiOfflineFirstKit-1.0.0-demo-web.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1600">
+  <meta property="og:video:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Maui Offline-First Starter Kit">
   <meta name="twitter:description"
@@ -106,9 +111,13 @@
         </div>
         <div class="demo-card">
           <div class="demo-preview">
-            <img src="assets/media-sync.webp" width="1600" height="1200"
-              alt="Synchronization hub showing the observable sync lifecycle">
-            <div class="demo-preview-label"><span aria-hidden="true">●</span> Offline-to-sync flow</div>
+            <video controls muted playsinline preload="metadata"
+              poster="assets/maui-offline-first-demo-poster.webp"
+              aria-label="68-second demonstration of offline CRUD, local queue, reconnection, synchronization, and sync history">
+              <source src="assets/MauiOfflineFirstKit-1.0.0-demo-web.mp4" type="video/mp4">
+              Your browser does not support HTML video. You can
+              <a href="assets/MauiOfflineFirstKit-1.0.0-demo-web.mp4">download the demo video</a>.
+            </video>
           </div>
           <ol class="demo-steps" aria-label="Offline-to-sync lifecycle">
             <li><strong>01</strong><span>Offline CRUD</span></li>
