@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maui Offline-First Starter Kit — .NET MAUI + ASP.NET Core</title>
+  <meta name="description" content="Production-oriented offline-first infrastructure for .NET MAUI and ASP.NET Core: SQLite, durable outbox, push/pull sync, conflicts, auth, diagnostics, and 375 automated tests.">
+  <meta name="theme-color" content="#0d0b18">
+  <meta property="og:title" content="Maui Offline-First Starter Kit">
+  <meta property="og:description" content="Build .NET MAUI apps that keep working offline — without designing the sync engine from scratch.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Maui Offline-First Starter Kit home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Maui Offline-First</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="button small" href="#pricing">View pricing</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">.NET 10 · .NET MAUI · ASP.NET Core · SQLite</div>
+          <h1>Build apps that keep working <span>offline.</span></h1>
+          <p class="lead">A production-oriented starter kit for .NET MAUI apps that need reliable local-first CRUD and safe synchronization — without rebuilding the sync infrastructure from scratch.</p>
+          <div class="hero-actions">
+            <a class="button" href="#pricing">See launch pricing</a>
+            <a class="button ghost" href="#architecture">Explore architecture</a>
+          </div>
+          <div class="proof-row" aria-label="Release highlights">
+            <div><strong>375</strong><span>automated tests</span></div>
+            <div><strong>Windows</strong><span>functionally validated</span></div>
+            <div><strong>Android</strong><span>functionally validated</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Product preview">
+          <div class="glow"></div>
+          <div class="desktop-card">
+            <div class="window-bar"><i></i><i></i><i></i><span>Field Service Demo</span></div>
+            <img src="assets/workorder-desktop.webp" alt="Desktop work order form in the reference application">
+          </div>
+          <div class="phone-card">
+            <img src="assets/sync-mobile.webp" alt="Android synchronization status screen">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="shell strip-grid">
+        <span>Local-first CRUD</span><span>Durable Outbox</span><span>Push / Pull</span><span>Conflict Resolution</span><span>JWT + Refresh Tokens</span><span>Diagnostics</span>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="eyebrow">The hard parts are already modeled</div>
+          <h2>More than a UI template.</h2>
+          <p>Offline-first is not “add SQLite and sync later.” This kit focuses on the infrastructure that usually consumes the most engineering time.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature"><b>01</b><h3>Local-first persistence</h3><p>User-facing CRUD writes to SQLite first, so ordinary workflows remain useful without network access.</p></article>
+          <article class="feature"><b>02</b><h3>Durable outbox</h3><p>Pending operations survive process restarts and are compacted safely before dispatch.</p></article>
+          <article class="feature"><b>03</b><h3>Push / pull synchronization</h3><p>Incremental sync with durable cursors, bootstrap support, idempotency, batching, and replay safety.</p></article>
+          <article class="feature"><b>04</b><h3>Conflict handling</h3><p>Optimistic concurrency, durable conflict records, and explicit Use Local / Use Server resolution paths.</p></article>
+          <article class="feature"><b>05</b><h3>Authentication lifecycle</h3><p>JWT access tokens, rotating refresh tokens, SecureStorage, logout, and offline session restoration.</p></article>
+          <article class="feature"><b>06</b><h3>Observable sync</h3><p>Status, queue, history, retry behavior, diagnostics, and clear failure states built into the reference app.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section section-muted">
+      <div class="shell architecture-grid">
+        <div>
+          <div class="eyebrow">Reference architecture</div>
+          <h2>Understandable enough to extend.</h2>
+          <p class="section-copy">The source is separated into MAUI presentation, core abstractions, infrastructure, shared contracts, and an ASP.NET Core API. The demo domain is intentionally small so the synchronization mechanics stay visible.</p>
+          <ul class="check-list">
+            <li>.NET MAUI app reads operational state from local SQLite</li>
+            <li>Business mutation + outbox entry commit together</li>
+            <li>Orchestrator drains push, bootstrap, and pull workflows</li>
+            <li>ASP.NET Core API persists idempotency and a monotonic change feed</li>
+            <li>Tombstones propagate deletes safely across clients</li>
+          </ul>
+        </div>
+        <div class="architecture-card" role="img" aria-label="Architecture flow from MAUI app through SQLite and Outbox to ASP.NET Core API">
+          <div class="arch-node accent">.NET MAUI App</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-row"><div class="arch-node">SQLite</div><div class="arch-node">Durable Outbox</div></div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-row"><div class="arch-node">Push</div><div class="arch-node">Pull / Bootstrap</div></div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node accent">ASP.NET Core API</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-row"><div class="arch-node">EF Core</div><div class="arch-node">Change Feed</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="eyebrow">Reference application</div>
+          <h2>A real demo for the full sync lifecycle.</h2>
+          <p>The included field-service sample exercises local CRUD, queueing, synchronization, diagnostics, and cross-device convergence.</p>
+        </div>
+        <div class="shots">
+          <figure><div class="shot phone"><img src="assets/dashboard-mobile.webp" alt="Android dashboard"></div><figcaption>Local-first dashboard</figcaption></figure>
+          <figure><div class="shot phone"><img src="assets/sync-mobile.webp" alt="Android synchronization screen"></div><figcaption>Synchronization status</figcaption></figure>
+          <figure><div class="shot phone light"><img src="assets/history-mobile.webp" alt="Android sync history screen"></div><figcaption>Durable sync history</figcaption></figure>
+          <figure><div class="shot phone light"><img src="assets/queue-mobile.webp" alt="Android sync queue screen"></div><figcaption>Inspectable queue</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="shell two-col">
+        <div>
+          <div class="eyebrow">What you get</div>
+          <h2>Source code, tests, and the reasoning behind it.</h2>
+        </div>
+        <div class="deliverables">
+          <div>Full .NET 10 source code</div><div>.NET MAUI reference app</div><div>ASP.NET Core API</div><div>SQLite + EF Core persistence</div><div>Sync engine + durable outbox</div><div>Conflict resolution workflow</div><div>Authentication infrastructure</div><div>375 automated tests</div><div>Architecture & sync documentation</div><div>Guide for adding a synced entity</div><div>Deployment & troubleshooting docs</div><div>Commercial source-code license</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section platform-section">
+      <div class="shell platform-grid">
+        <div class="platform-card good"><span>Validated</span><h3>Windows</h3><p>Functional and visual release validation completed.</p></div>
+        <div class="platform-card good"><span>Validated</span><h3>Android</h3><p>Functional, offline/reconnect, sync, and visual validation completed.</p></div>
+        <div class="platform-card"><span>Source target</span><h3>iOS</h3><p>Compile-checked; not functionally certified in v1.</p></div>
+        <div class="platform-card"><span>Source target</span><h3>Mac Catalyst</h3><p>Compile-checked; not functionally certified in v1.</p></div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+      <div class="shell">
+        <div class="section-heading centered">
+          <div class="eyebrow">Launch pricing</div>
+          <h2>One-time purchase. No runtime royalties.</h2>
+          <p>Version 1.0.0 is complete. Public checkout is being opened now.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <div class="price-label">Developer License</div>
+            <div class="price"><span>$</span>79</div>
+            <p>For one authorized developer.</p>
+            <ul><li>Unlimited personal projects</li><li>Unlimited commercial projects</li><li>SaaS and client projects allowed</li><li>Full source modification</li><li>No revenue share or per-app fee</li></ul>
+            <span class="button disabled" aria-disabled="true">Sales opening soon</span>
+          </article>
+          <article class="price-card">
+            <div class="price-label">Team License · up to 5 seats</div>
+            <div class="price"><span>$</span>199</div>
+            <p>For teams that need shared source access.</p>
+            <ul><li>Up to 5 authorized developers</li><li>Same project rights as Developer</li><li>Private team repositories allowed</li><li>Client delivery under license terms</li><li>No runtime royalties</li></ul>
+            <span class="button ghost disabled" aria-disabled="true">Sales opening soon</span>
+          </article>
+        </div>
+        <p class="license-note">The full commercial license is included with the product. The purchased version is licensed perpetually, subject to the license terms. Technical validity/support period: 12 months from purchase.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-muted">
+      <div class="shell faq-layout">
+        <div><div class="eyebrow">FAQ</div><h2>Before you buy.</h2></div>
+        <div class="faq-list">
+          <details open><summary>Is this just a set of MAUI screens?</summary><p>No. The primary value is the offline-first infrastructure: SQLite persistence, durable outbox, synchronization, idempotency, conflicts, authentication, diagnostics, and tests. The UI is a reference implementation.</p></details>
+          <details><summary>Can I use it in client projects?</summary><p>Yes. The commercial license permits client projects and private source delivery as part of an End Product. It does not grant the client general rights to reuse the Starter Kit as a base for unrelated projects.</p></details>
+          <details><summary>Can I build SaaS or commercial apps with it?</summary><p>Yes. Commercial apps, SaaS, internal systems, mobile, desktop, web/backend integrations, and client work are permitted under the purchased license.</p></details>
+          <details><summary>Are there runtime royalties?</summary><p>No. There is no revenue share, per-user, per-install, or per-project runtime fee within the rights of the purchased license.</p></details>
+          <details><summary>Does v1 include guaranteed background sync?</summary><p>No. Version 1 focuses on reliable foreground orchestration and reconnection behavior. Guaranteed background synchronization, attachments/media sync, push notifications, and realtime sync are not included in v1.</p></details>
+          <details><summary>Which platforms were validated?</summary><p>Windows and Android were functionally validated for the 1.0.0 release. iOS and Mac Catalyst remain source targets and were compile-checked, but are not functionally certified in v1.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="shell cta-card">
+        <div><div class="eyebrow">Maui Offline-First Starter Kit 1.0.0</div><h2>Start from the sync foundation, not from zero.</h2><p>Production-oriented architecture for developers building serious .NET MAUI apps that cannot depend on a permanent connection.</p></div>
+        <a class="button" href="#pricing">View launch pricing</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Maui Offline-First</span></div><p>Commercial software by Lucas Soares Costa.</p></div>
+      <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a></div>
+      <div class="copyright">© 2026 Lucas Soares Costa. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
